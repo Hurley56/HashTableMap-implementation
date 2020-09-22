@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
  * @author sharath
  */
 public class TestHashTable {
-  
+
   /**
    * Test class for the put and get methods.
    * 
@@ -23,34 +23,40 @@ public class TestHashTable {
   public static boolean test1() {
     // create new HashTableMap object with integer type for the key and value
     HashTableMap<Integer, Integer> table1 = new HashTableMap<Integer, Integer>(5);
-    
+
     // add key-value pairs to the hashtable
     table1.put(3, 12);
-    table1.put(4,  12);
+    table1.put(4, 12);
     table1.put(10, 6);
-    
+    table1.put(10, 6);
+
+    // checks if adding a duplicate increases the size (it shouldn't)
+    if (table1.size() != 3) {
+      return false;
+    }
+
     // check to see if the put method worked by calling get with each key
-    if(table1.get(3) != 12){
+    if (table1.get(3) != 12) {
       return false;
     }
-    if(table1.get(4) != 12) {
+    if (table1.get(4) != 12) {
       return false;
     }
-    if(table1.get(10) != 6) {
+    if (table1.get(10) != 6) {
       return false;
     }
-    
+
     // check to see that if the key doesn't exist the exception is thrown
     try {
-      if(table1.get(6) != null) {
+      if (table1.get(6) != null) {
         return false;
       }
-    } catch(NoSuchElementException e) {
+    } catch (NoSuchElementException e) {
       System.out.println(e.getMessage());
     }
     return true;
   }
-  
+
   /**
    * Test class for the clear method.
    * 
@@ -59,20 +65,20 @@ public class TestHashTable {
   public static boolean test2() {
     // create new HashTableMap object with integer type for the key and value
     HashTableMap<Integer, Integer> table1 = new HashTableMap<Integer, Integer>(5);
-    
+
     // add key-value pairs to the hashtable
     table1.put(5, 7);
     table1.put(1, 25);
     table1.put(8, 19);
     table1.clear(); // clear the hashtable of all key-value pairs
-    
+
     // check to see that there are no pairs in the hashtable
-    if(table1.size() != 0) {
+    if (table1.size() != 0) {
       return false;
     }
     return true;
   }
-  
+
   /**
    * Test class for the containsKey method.
    * 
@@ -81,19 +87,19 @@ public class TestHashTable {
   public static boolean test3() {
     // create new HashTableMap object with integer type for the key and value
     HashTableMap<Integer, Integer> table1 = new HashTableMap<Integer, Integer>(5);
-    
+
     // add key-value pairs to the hashtable
     table1.put(3, 5);
     table1.put(10, 9);
     table1.put(2, 15);
-    
+
     // check to see if the hashtable contains a pair using the key
-    if(!table1.containsKey(3)) {
+    if (!table1.containsKey(3)) {
       return false;
     }
-    return true; 
+    return true;
   }
-  
+
   /**
    * Test class for the remove method.
    * 
@@ -102,20 +108,20 @@ public class TestHashTable {
   public static boolean test4() {
     // create new HashTableMap object with integer type for the key and value
     HashTableMap<Integer, Integer> table1 = new HashTableMap<Integer, Integer>(5);
-    
+
     // add key-value pairs to the hashtable
     table1.put(10, 5);
     table1.put(25, 4);
     table1.put(6, 16);
-    
+
     // remove the pair with the key 10
     table1.remove(10);
-    if(table1.containsKey(10)) {
+    if (table1.containsKey(10)) {
       return false;
     }
-    return true; 
+    return true;
   }
-  
+
   /**
    * Test class for the size method.
    * 
@@ -124,20 +130,20 @@ public class TestHashTable {
   public static boolean test5() {
     // create new HashTableMap object with integer type for the key and value
     HashTableMap<Integer, Integer> table1 = new HashTableMap<Integer, Integer>(5);
-    
+
     // add key-value pairs to the hashtable
     table1.put(2, 3);
     table1.put(30, 5);
     table1.put(4, 10);
     table1.put(9, 55);
-    
+
     // check to see if the size of the hashtable is 4
-    if(table1.size() != 4) {
+    if (table1.size() != 4) {
       return false;
     }
     return true;
   }
-  
+
   /**
    * Main method that prints out the result of each test method.
    * 

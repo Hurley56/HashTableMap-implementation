@@ -8,30 +8,31 @@
 
 /**
  * This class acts similar to a LinkedList class and uses two generic type parameters
+ * 
  * @author sharath
  *
- * @param <KeyType> the key for the the pair
- * @param <ValueType> the value that is associated with a key 
+ * @param <KeyType> the key for the pair
+ * @param <ValueType> the value that is associated with a key in the pair
  */
 public class Pairs<KeyType, ValueType> {
   private KeyType key; // instance variable for the key
   private ValueType val; // instance variable for the value
   private Pairs<KeyType, ValueType> next; // instance variable for the next pair
   private Pairs<KeyType, ValueType> prev; // instance variable for the previous pair
-  
+
   /**
    * A constructor for the Pairs object that takes in two parameters
    * 
    * @param key - the key for the pair
    * @param val - the value associated with the key
    */
-  public Pairs(KeyType key, ValueType val){
+  public Pairs(KeyType key, ValueType val) {
     this.key = key;
     this.val = val;
     this.prev = null;
     this.next = null;
   }
-  
+
   /**
    * Accessor method for the previous pair
    * 
@@ -40,7 +41,7 @@ public class Pairs<KeyType, ValueType> {
   public Pairs<KeyType, ValueType> getPrev() {
     return this.prev;
   }
-  
+
   /**
    * Accessor method for the next pair
    * 
@@ -49,7 +50,7 @@ public class Pairs<KeyType, ValueType> {
   public Pairs<KeyType, ValueType> getNext() {
     return this.next;
   }
-  
+
   /**
    * Accessor method for the key of a pair
    * 
@@ -58,7 +59,7 @@ public class Pairs<KeyType, ValueType> {
   public KeyType getKey() {
     return this.key;
   }
-  
+
   /**
    * Accessor method for the value of a pair
    * 
@@ -67,7 +68,7 @@ public class Pairs<KeyType, ValueType> {
   public ValueType getValue() {
     return this.val;
   }
-  
+
   /**
    * Mutator method for the previous pair that updates the variable
    * 
@@ -76,7 +77,7 @@ public class Pairs<KeyType, ValueType> {
   public void setPrev(Pairs<KeyType, ValueType> prev) {
     this.prev = prev;
   }
-  
+
   /**
    * Mutator method for the next pair that updates the variable
    * 
@@ -85,7 +86,7 @@ public class Pairs<KeyType, ValueType> {
   public void setNext(Pairs<KeyType, ValueType> next) {
     this.next = next;
   }
-  
+
   /**
    * Mutator method for the key of a pair that updates the variable
    * 
@@ -94,7 +95,7 @@ public class Pairs<KeyType, ValueType> {
   public void setKey(KeyType key) {
     this.key = key;
   }
-  
+
   /**
    * Mutator method for the value of a pair that updates the variable
    * 
